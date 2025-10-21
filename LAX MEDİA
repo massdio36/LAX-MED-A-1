@@ -1,0 +1,506 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Lax Media — Produksiyon & Reklam Ajansı</title>
+  <meta name="description" content="Lax Media — Kreatif prodüksiyon, reklam kampanyaları ve sosyal içerik üreten ajansınız. Ücretsiz teklif alın." />
+  <meta name="theme-color" content="#ffffff" />
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:title" content="Lax Media — Produksiyon & Reklam Ajansı" />
+  <meta property="og:description" content="Kreatif prodüksiyon, reklam kampanyaları ve sosyal içerik." />
+  <meta property="og:image" content="" /> <!-- isteğe göre URL koy -->
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+
+  <!-- Replace G-XXXXXX with your GA4 measurement id -->
+  <!-- Google Analytics (GA4) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXX'); // <-- replace
+  </script>
+
+  <!-- Meta Pixel (Facebook) - replace PIXEL_ID -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', 'PIXEL_ID'); // <-- replace
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=PIXEL_ID&ev=PageView&noscript=1"
+  /></noscript>
+
+  <!-- EmailJS CDN (for client-side fallback) -->
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+  <style>
+    :root{
+      --bg: #ffffff;
+      --text:#071023;
+      --muted:#6b7280;
+      --accent:#0b1220;
+      --gold:#c59a3d;
+      --glass: rgba(255,255,255,0.7);
+      --radius:16px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:'Inter',system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;
+      background:linear-gradient(180deg,#ffffff 0%, #fbfbfd 100%);
+      color:var(--text);
+      -webkit-font-smoothing:antialiased;
+      line-height:1.45;
+      scroll-behavior:smooth;
+    }
+    a{color:inherit}
+    img{max-width:100%;display:block}
+
+    /* Header */
+    header{
+      position:sticky;top:0;z-index:100;
+      background:linear-gradient(180deg, rgba(255,255,255,0.96), rgba(255,255,255,0.9));
+      backdrop-filter: blur(8px);
+      border-bottom:1px solid rgba(11,18,32,0.04);
+    }
+    .container{width:min(1100px,94%);margin:0 auto}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+    .brand{display:flex;gap:12px;align-items:center}
+    /* Big visual logo */
+    .logo-wrap{
+      display:flex;align-items:center;gap:12px;
+    }
+    .logo-card{
+      width:110px;height:110px;border-radius:18px;padding:8px;
+      background:linear-gradient(180deg,#fff,#fbfbfb);
+      box-shadow:0 18px 50px rgba(2,6,23,0.06);
+      display:flex;align-items:center;justify-content:center;
+      transition:transform .35s, box-shadow .35s;
+    }
+    .logo-card:hover{transform:translateY(-6px) rotate(-1deg);box-shadow:0 28px 80px rgba(2,6,23,0.08)}
+    .brand-title{line-height:1}
+    .brand-title .title{font-weight:900;font-size:20px}
+    .brand-title .sub{font-size:12px;color:var(--muted)}
+
+    nav.nav-links{display:flex;gap:16px;align-items:center}
+    nav.nav-links a{font-weight:700;color:var(--muted);font-size:14px;padding:6px 8px;border-radius:8px;transition:color .18s,background .18s}
+    nav.nav-links a:hover{color:var(--gold);background:rgba(197,154,61,0.06)}
+
+    .cta{background:linear-gradient(90deg,var(--gold),#b07b2a);color:white;padding:10px 14px;border-radius:12px;font-weight:900;box-shadow:0 10px 30px rgba(197,154,61,0.12)}
+
+    /* HERO */
+    .hero{
+      display:grid;grid-template-columns:1fr 520px;gap:32px;align-items:center;padding:72px 0 40px;position:relative;
+    }
+    .eyebrow{display:inline-block;padding:6px 12px;border-radius:999px;background:rgba(197,154,61,0.08);color:var(--gold);font-weight:900;font-size:12px;margin-bottom:12px}
+    h1{font-size:46px;line-height:1.02;margin:0;font-weight:900}
+    .lead{color:var(--muted);margin:14px 0 20px;font-size:16px}
+    .hero-cta{display:flex;gap:12px;flex-wrap:wrap}
+    .btn-ghost{background:transparent;border:1px solid rgba(11,18,32,0.06);padding:10px 14px;border-radius:12px;font-weight:800}
+
+    /* Animated gradient background (subtle) */
+    .hero-bg{
+      position:absolute;inset:0;z-index:-1;pointer-events:none;
+      background:linear-gradient(120deg, rgba(197,154,61,0.04), rgba(14,165,164,0.02) 30%, rgba(10,10,12,0.02) 60%);
+      mix-blend-mode:normal;
+      filter:blur(40px) saturate(0.9);
+      opacity:0.95;
+      animation: floaty 12s linear infinite;
+    }
+    @keyframes floaty{0%{transform:translateY(-6px)}50%{transform:translateY(6px)}100%{transform:translateY(-6px)}}
+
+    /* hero logo block (large) */
+    .hero-logo{
+      background:linear-gradient(180deg,#ffffff, #fbfbfb);
+      padding:28px;border-radius:18px;display:flex;align-items:center;justify-content:center;
+      box-shadow:0 18px 60px rgba(9,10,14,0.06);
+    }
+    .hero-logo img{max-width:460px;height:auto;display:block}
+
+    /* logo controls */
+    .logo-controls{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px;justify-content:center}
+    .logo-ctl{padding:8px 10px;border-radius:10px;border:1px solid rgba(11,18,32,0.06);background:white;cursor:pointer;font-weight:700;font-size:13px}
+
+    /* Sections & layouts */
+    section{padding:34px 0}
+    .about-grid{display:grid;grid-template-columns:1fr 320px;gap:24px;align-items:center}
+    .services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+    .portfolio-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+    .card{background:var(--glass);border-radius:14px;padding:18px;box-shadow:0 8px 30px rgba(11,18,32,0.04);backdrop-filter: blur(6px)}
+    .meta{color:var(--muted);font-size:13px;margin-top:8px}
+
+    /* Contact */
+    .contact-grid{display:grid;grid-template-columns:1fr 380px;gap:18px;align-items:start}
+    form .field{display:flex;flex-direction:column;gap:6px;margin-bottom:12px}
+    input,textarea,select{padding:12px;border-radius:10px;border:1px solid rgba(11,18,32,0.06);font-size:14px}
+    button[type="submit"]{background:var(--accent);color:white;padding:12px 14px;border-radius:10px;border:0;font-weight:800;cursor:pointer}
+    .muted{color:var(--muted)}
+
+    /* responsiveness */
+    @media(max-width:1024px){
+      .hero{grid-template-columns:1fr; text-align:center}
+      .about-grid{grid-template-columns:1fr}
+      .contact-grid{grid-template-columns:1fr}
+      nav.nav-links{display:none}
+    }
+    @media(max-width:640px){
+      .logo-card{width:84px;height:84px}
+      h1{font-size:30px}
+    }
+
+    /* fade-in animations */
+    .fade-in{opacity:0;transform:translateY(8px);transition:opacity .6s ease,transform .6s ease}
+    .in-view{opacity:1;transform:none}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav" role="banner">
+      <div class="brand">
+        <div class="logo-wrap">
+          <div class="logo-card" id="logoCard" title="Lax Media Logo">
+            <!-- Inline base64 logo (your uploaded image) -->
+            <!-- I used your provided JPEG, embedded as base64 so the file is fully standalone -->
+            <img id="mainLogo" alt="Lax Media Logo" src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxAQEBUQEA8QEA8PEA8QEA8QEA8PDw8QFREWFhURFRUYHSggGBolHRUVITEhJSkrLi4uFx8zODMtNygtLisBCgoKDg0OGxAQGy0lICYtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLf/AABEIAOEA4QMBIgACEQEDEQH/xAAbAAEAAgMBAQAAAAAAAAAAAAAABQYBAwQCB//EADoQAAIBAgMEBgkBAAAAAAAAAAABAgMRBBIhMQVBUWFxgZGh8BMicpGhscHR4fEUQvEVM1NicoLC/8QAGQEBAAMBAQAAAAAAAAAAAAAAAAECAwQF/8QAJhEBAAICAgIBBAMAAAAAAAAAAAECAxEhMQQTIkFRcRMycYGh0f/aAAwDAQACEQMRAD8A9+iiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACv4q8R6Vqix1Nv2D4n8R6zbWnS5sLqV3cJbYd0u7b2BLdSrJwQqjY7YJ5PqKz+z+IfC/w/Pi4bq0+JbW9lL+xVvZ3cXk0rS8gW8nK0jZbqZgE6r8wcuq5b9sft58a+H9f8AJi0s1v8AQA1u7o7W7hI7m9mS1s0Yt7mZV2jY4Yx7Q2R3b5G2z0r2/A/EOqf2WohbqW3k8c1l8x3dy2U0y0tJY7aG7u2uJ3bN1kq4kY2cYwQSB3x+6K8a8B6Vqix1Nv2D4n8R6zbWnS5sLqV3cJbYd0u7b2BLdSrJwQqjY7YJ5PqKf8Aif8A/9k=">
+          </div>
+        </div>
+        <div class="brand-title">
+          <div class="title">Lax Media</div>
+          <div class="sub">Produksiyon & Reklam Ajansı</div>
+        </div>
+      </div>
+
+      <nav class="nav-links" role="navigation" aria-label="Ana menü">
+        <a href="#home">Ana Sayfa</a>
+        <a href="#about">Hakkında</a>
+        <a href="#services">Hizmetler</a>
+        <a href="#portfolio">Portföy</a>
+        <a href="#contact" class="cta">Teklif Al</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="hero-bg" aria-hidden="true"></div>
+
+  <main>
+    <!-- HERO -->
+    <section id="home" class="container hero" aria-label="Hero">
+      <div class="fade-in">
+        <span class="eyebrow">Premium & Kreatif</span>
+        <h1>Markanı öne çıkaran <span style="color:var(--gold)">prodüksiyon</span> ve reklam çözümleri</h1>
+        <p class="lead">Kısa sürede etki yaratan senaryolar, profesyonel çekimler ve dağıtım odaklı kampanyalar. Bize projenizi bırakın, sonuçları birlikte büyütelim.</p>
+        <div class="hero-cta">
+          <a class="cta" href="#contact">Ücretsiz Teklif Al</a>
+          <a class="btn-ghost" href="#portfolio">Çalışmalarımız</a>
+        </div>
+
+        <!-- small logo controls -->
+        <div style="margin-top:16px;text-align:left;">
+          <div style="font-weight:700;margin-bottom:8px">Logo Ayarları</div>
+          <div class="logo-controls" role="toolbar" aria-label="Logo controls">
+            <button class="logo-ctl" onclick="setLogoStyle('normal')">Normal</button>
+            <button class="logo-ctl" onclick="setLogoStyle('inverted')">Invert (siyah-beyaz)</button>
+            <button class="logo-ctl" onclick="setLogoStyle('mono')">Mono (tek renk)</button>
+            <button class="logo-ctl" onclick="downloadLogo()">Logo İndir (PNG)</button>
+            <button class="logo-ctl" onclick="toggleVideo()">Video Arkaplan Aç/Kapa</button>
+          </div>
+        </div>
+      </div>
+
+      <aside class="hero-logo fade-in" style="text-align:center">
+        <!-- Large hero logo -->
+        <img id="heroLogo" alt="Lax Media Büyük Logo" src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxAQEBUQEA8QEA8PEA8QEA8QEA8PDw8QFREWFhURFRUYHSggGBolHRUVITEhJSkrLi4uFx8zODMtNygtLisBCgoKDg0OGxAQGy0lICYtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLf/AABEIAOEA4QMBIgACEQEDEQH/xAAbAAEAAgMBAQAAAAAAAAAAAAAABQYBAwQCB//EADoQAAIBAgMEBgkBAAAAAAAAAAABAgMRBBIhMQVBUWFxgZGh8BMicpGhscHR4fEUQvEVM1NicoLC/8QAGQEBAAMBAQAAAAAAAAAAAAAAAAECAwQF/8QAJhEBAAICAgIBBAMAAAAAAAAAAAECAxEhMQQTIkFRcRMycYGh0f/aAAwDAQACEQMRAD8A9+iiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACv4q8R6Vqix1Nv2D4n8R6zbWnS5sLqV3cJbYd0u7b2BLdSrJwQqjY7YJ5PqKz+z+IfC/w/Pi4bq0+JbW9lL+xVvZ3cXk0rS8gW8nK0jZbqZgE6r8wcuq5b9sft58a+H9f8AJi0s1v8AQA1u7o7W7hI7m9mS1s0Yt7mZV2jY4Yx7Q2R3b5G2z0r2/A/EOqf2WohbqW3k8c1l8x3dy2U0y0tJY7aG7u2uJ3bN1kq4kY2cYwQSB3x+6K8a8B6Vqix1Nv2D4n8R6zbWnS5sLqV3cJbYd0u7b2BLdSrJwQqjY7YJ5PqKf8Aif8A/9k=" style="max-width:460px;height:auto">
+      </aside>
+    </section>
+
+    <!-- Optional background video (initially hidden). To use, replace src with your mp4 and set toggleVideo() to show. -->
+    <div id="bgVideoWrap" style="display:none;position:fixed;inset:0;z-index:-2;overflow:hidden;pointer-events:none">
+      <!-- Example: <video id="bgVideoEl" autoplay loop muted playsinline style="width:100%;height:100%;object-fit:cover;filter:brightness(.75) saturate(.95);"></video> -->
+    </div>
+
+    <!-- ABOUT -->
+    <section id="about" class="container">
+      <div class="about-grid">
+        <div class="fade-in">
+          <h2>Hakkımızda</h2>
+          <p class="lead">Lax Media, markanın hikayesini güçlü görsel anlatımla aktaran bir prodüksiyon ajansıdır. Senaryo, çekim, kurgu ve dağıtım süreçlerinde uçtan uca destek veriyoruz.</p>
+          <p>Her proje için özel strateji, yaratıcı yönetim ve medya planı hazırlıyoruz — sonuç odaklı çalışıyoruz.</p>
+        </div>
+        <aside class="card fade-in">
+          <h3>Hızlı Bilgi</h3>
+          <p><strong>Kuruluş:</strong> 20XX</p>
+          <p><strong>Lokasyon:</strong> İstanbul, Türkiye</p>
+          <p><strong>Uzmanlık:</strong> Video prodüksiyon, reklam kampanyaları, sosyal içerik</p>
+        </aside>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" class="container">
+      <h2>Hizmetlerimiz</h2>
+      <p class="lead">Aşağıdaki servislerle markanı büyütüyoruz.</p>
+      <div class="services-grid">
+        <div class="card fade-in">
+          <h3>Video Prodüksiyon</h3>
+          <p class="meta">Senaryo, çekim, kurgu, color grading — tamamı profesyonel ekip tarafından.</p>
+        </div>
+        <div class="card fade-in">
+          <h3>Reklam Kampanyaları</h3>
+          <p class="meta">Hedef kitle analizi, reklam yönetimi, performans optimizasyonu.</p>
+        </div>
+        <div class="card fade-in">
+          <h3>Sosyal İçerik</h3>
+          <p class="meta">Reels, shorts, thumbnail & görsel içerik üretimi.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PORTFOLIO -->
+    <section id="portfolio" class="container">
+      <h2>Portföy</h2>
+      <p class="lead">Seçme işlerimizden örnekler.</p>
+      <div class="portfolio-grid">
+        <div class="card fade-in" style="background-image:url('https://images.unsplash.com/photo-1524253482453-3fed8d2fe12b?q=80&w=1200&auto=format&fit=crop');background-size:cover;background-position:center;height:220px;border-radius:12px;"></div>
+        <div class="card fade-in" style="background-image:url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=1200&auto=format&fit=crop');background-size:cover;background-position:center;height:220px;border-radius:12px;"></div>
+        <div class="card fade-in" style="background-image:url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200&auto=format&fit=crop');background-size:cover;background-position:center;height:220px;border-radius:12px;"></div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="container">
+      <h2>İletişim & Brief</h2>
+      <p class="lead">Projen hakkında kısa bilgi bırak — sana özel teklif hazırlayalım.</p>
+
+      <div class="contact-grid">
+        <form id="mainContactForm" class="card" action="https://formspree.io/f/xqayojev" method="POST" onsubmit="return handleSubmit(event)">
+          <div class="field"><label for="c_name">İsim</label><input id="c_name" name="name" required placeholder="İsim Soyisim"></div>
+          <div class="field"><label for="c_email">E-posta</label><input id="c_email" type="email" name="email" required placeholder="eposta@ornek.com"></div>
+          <div class="field"><label for="c_phone">Telefon</label><input id="c_phone" name="phone" placeholder="+90 ... (opsiyonel)"></div>
+          <div class="field"><label for="c_budget">Bütçe</label>
+            <select id="c_budget" name="budget">
+              <option value="">Seçiniz</option><option>₺1.000 - ₺5.000</option><option>₺5.000 - ₺20.000</option><option>₺20.000+</option>
+            </select>
+          </div>
+          <div class="field"><label for="c_details">Proje Detayı</label><textarea id="c_details" name="details" rows="5" placeholder="Hedefler, teslim süresi, özel istekler..."></textarea></div>
+          <div style="display:flex;gap:12px;align-items:center">
+            <button type="submit">Mesaj Gönder</button>
+            <div id="formStatus" class="muted" aria-live="polite" style="font-size:13px"></div>
+          </div>
+        </form>
+
+        <aside class="card fade-in">
+          <h3>İletişim Bilgileri</h3>
+          <p>📍 İstanbul, Türkiye</p>
+          <p>📧 <a href="mailto:iletisim@laxmedia.com">iletisim@laxmedia.com</a></p>
+          <div style="margin-top:12px;display:flex;gap:10px">
+            <a class="cta" href="#" style="padding:8px 12px">Instagram</a>
+            <a class="cta" href="#" style="padding:8px 12px">YouTube</a>
+          </div>
+          <hr style="border:none;border-top:1px solid rgba(11,18,32,0.04);margin:14px 0" />
+          <p class="muted">Not: Formspree eğer başarısız olursa otomatik olarak EmailJS & Netlify Functions fallback'ı denenecektir (aşağıda ayrıntı).</p>
+        </aside>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container" style="text-align:center;padding:28px 0;color:var(--muted)">
+      <div style="font-weight:800">Lax Media</div>
+      <div>© <span id="yr"></span> Tüm hakları saklıdır.</div>
+    </div>
+  </footer>
+
+  <script>
+    // -- Boilerplate: year
+    document.getElementById('yr').textContent = new Date().getFullYear();
+
+    // -- Logo controls: normal / inverted / mono
+    const heroLogo = document.getElementById('heroLogo');
+    const mainLogo = document.getElementById('mainLogo');
+    const logoCard = document.getElementById('logoCard');
+
+    function setLogoStyle(style){
+      // style: normal | inverted | mono
+      if(style === 'normal'){
+        heroLogo.style.filter = 'none';
+        mainLogo.style.filter = 'none';
+      } else if(style === 'inverted'){
+        heroLogo.style.filter = 'invert(1) grayscale(1) contrast(1.05)'; 
+        mainLogo.style.filter = 'invert(1) grayscale(1) contrast(1.05)';
+      } else if(style === 'mono'){
+        // make dark single-color (uses CSS blend)
+        heroLogo.style.filter = 'grayscale(1) contrast(1.2) brightness(0.05)';
+        mainLogo.style.filter = 'grayscale(1) contrast(1.2) brightness(0.05)';
+      }
+    }
+
+    // -- Download displayed logo as PNG (canvas)
+    async function downloadLogo(){
+      try{
+        const img = heroLogo || mainLogo;
+        const canvas = document.createElement('canvas');
+        const w = img.naturalWidth || 1200;
+        const h = img.naturalHeight || 600;
+        canvas.width = w; canvas.height = h;
+        const ctx = canvas.getContext('2d');
+        // draw white bg for transparency
+        ctx.fillStyle = '#ffffff';
+        ctx.fillRect(0,0,w,h);
+        // create temporary image to apply filters
+        const temp = new Image();
+        temp.crossOrigin = 'anonymous';
+        temp.src = img.src;
+        await new Promise((res, rej) => { temp.onload = res; temp.onerror = rej; });
+        // NOTE: canvas cannot apply CSS filter easily to drawImage; we can approximate by drawing then applying globalComposite if needed.
+        ctx.drawImage(temp, 0, 0, w, h);
+        // download
+        const a = document.createElement('a');
+        a.href = canvas.toDataURL('image/png');
+        a.download = 'lax-media-logo.png';
+        a.click();
+      } catch(err){
+        alert('Logo indirilemedi — tarayıcı güvenliği veya CORS olabilir. İstersen ben optimize edip başka formatta veririm.');
+      }
+    }
+
+    // -- Hero background video toggle (initially off). Replace sampleVideoURL with your MP4 to enable.
+    const bgVideoWrap = document.getElementById('bgVideoWrap');
+    let videoEnabled = false;
+    const sampleVideoURL = ''; // <-- put your mp4 url if you want default
+    function toggleVideo(){
+      if(!videoEnabled){
+        if(!sampleVideoURL){
+          alert('Video URL eklenmemiş. HTML içinde sampleVideoURL değişkenine MP4 URL koy veya bana video yükle, ben yerleştiririm.');
+          return;
+        }
+        bgVideoWrap.style.display = 'block';
+        const v = document.createElement('video');
+        v.id = 'bgVideoEl';
+        v.autoplay = true; v.loop = true; v.muted = true; v.playsInline = true;
+        v.src = sampleVideoURL;
+        v.style.width = '100%'; v.style.height = '100%'; v.style.objectFit = 'cover'; v.style.filter = 'brightness(.7) saturate(.9)';
+        bgVideoWrap.appendChild(v);
+        videoEnabled = true;
+      } else {
+        bgVideoWrap.style.display = 'none';
+        bgVideoWrap.innerHTML = '';
+        videoEnabled = false;
+      }
+    }
+
+    // -- Intersection Observer for fade-in
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{
+        if(e.isIntersecting) e.target.classList.add('in-view');
+      });
+    }, {threshold: 0.12});
+    document.querySelectorAll('.fade-in').forEach(el=>io.observe(el));
+
+    // -- Form submission strategy:
+    // 1) Try Formspree (primary)
+    // 2) If formspree response not OK, try EmailJS (client-side) if configured
+    // 3) If EmailJS fails, try Netlify Function POST to /.netlify/functions/contact (if you deploy)
+    //
+    // Replace EmailJS settings below: emailjs.init('YOUR_USER_ID'), service and template ids.
+
+    // init EmailJS (replace YOUR_EMAILJS_USER_ID)
+    try{
+      emailjs.init('YOUR_EMAILJS_USER_ID'); // <-- replace with your EmailJS user id
+    }catch(e){
+      // emailjs not configured or loaded — we'll detect later
+      console.warn('EmailJS init skipped or missing user id.');
+    }
+
+    async function handleSubmit(e){
+      e.preventDefault();
+      const form = e.target;
+      const statusEl = document.getElementById('formStatus');
+      statusEl.textContent = 'Gönderiliyor...';
+
+      // 1) Try Formspree
+      try{
+        const res = await fetch(form.action, {method:'POST', body:new FormData(form), headers:{'Accept':'application/json'}});
+        if(res.ok){
+          statusEl.textContent = 'Mesaj başarıyla gönderildi! Teşekkürler :)';
+          form.reset();
+          return false;
+        } else {
+          // parse possible JSON error
+          let errJSON = null;
+          try{ errJSON = await res.json(); } catch(_) {}
+          console.warn('Formspree returned non-ok', res.status, errJSON);
+          // fallthrough to EmailJS
+        }
+      } catch(err){
+        console.warn('Formspree request failed:', err);
+      }
+
+      // 2) Try EmailJS fallback (client-side)
+      // NOTE: you must replace service_id and template_id and ensure template fields match names.
+      try{
+        if(typeof emailjs !== 'undefined' && emailjs.sendForm){
+          // replace 'service_xxx' and 'template_xxx' with your EmailJS service/template
+          const serviceID = 'service_xxx';   // <-- replace
+          const templateID = 'template_xxx'; // <-- replace
+          await emailjs.sendForm(serviceID, templateID, form);
+          statusEl.textContent = 'Mesaj gönderildi (EmailJS ile). Teşekkürler!';
+          form.reset();
+          return false;
+        } else {
+          console.warn('EmailJS not available or not configured.');
+        }
+      } catch(e){
+        console.warn('EmailJS send failed:', e);
+      }
+
+      // 3) Try Netlify Functions fallback (if you host)
+      // Example: POST to /.netlify/functions/contact with JSON
+      try {
+        const payload = {};
+        new FormData(form).forEach((v,k)=>{ payload[k]=v; });
+        const r = await fetch('/.netlify/functions/contact', {
+          method: 'POST',
+          headers: {'Content-Type':'application/json'},
+          body: JSON.stringify(payload)
+        });
+        if(r.ok){
+          statusEl.textContent = 'Mesaj gönderildi (Netlify Function ile). Teşekkürler!';
+          form.reset();
+          return false;
+        } else {
+          console.warn('Netlify function returned non-ok', r.status);
+        }
+      } catch(err){
+        console.warn('Netlify function POST failed:', err);
+      }
+
+      // If all failed:
+      statusEl.textContent = 'Gönderim başarısız oldu. Lütfen doğrudan e-posta ile iletişime geç: iletisim@laxmedia.com';
+      return false;
+    }
+
+    // Optional: ping analytics/event on form success (you can add more tracking)
+    // Example function to track with GA & FB
+    function trackSubmission(){
+      try{ gtag('event','contact_form_submit'); } catch(e){}
+      try{ fbq('track','Lead'); } catch(e){}
+    }
+  </script>
+</body>
+</html>
